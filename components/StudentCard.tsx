@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-type Student = {
+export type Student = {
   id: string
   admissionNumber: string
   firstName: string
@@ -30,12 +30,17 @@ export default function StudentCard({ student }: { student: Student }) {
         )}
       </div>
       <h3 className="text-lg font-semibold text-center">
-        {student.firstName} {student.otherNames ? student.otherNames + ' ' : ''}{student.lastName}
+        {student.firstName}{' '}
+        {student.otherNames ? student.otherNames + ' ' : ''}
+        {student.lastName}
       </h3>
-      <p className="text-sm text-gray-600 mt-1">Admission #: {student.admissionNumber}</p>
+      <p className="text-sm text-gray-600 mt-1">
+        Admission #: {student.admissionNumber}
+      </p>
       <p className="text-sm text-gray-600 mt-1">Gender: {student.gender}</p>
-      {/* <p className="text-sm text-gray-600 mt-1">DOB: {student.dob}</p> */}
-      <p className="text-sm text-gray-600 mt-1">classAdmitted: {student.classAdmitted}</p>
+      <p className="text-sm text-gray-600 mt-1">
+        Class: {student.classAdmitted}
+      </p>
     </div>
   )
 }
